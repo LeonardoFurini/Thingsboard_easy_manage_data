@@ -5,105 +5,119 @@
     </script>
 </head>
 
+
+
 <div class="row">
-    <div class="col">
-        <fieldset id="forms__input">
-            <legend>Captura de token</legend>
+    <div class="col-4"> .col-4 </div>
+        <details>
+            <summary>Read more</summary>
             <p>
-                <label for="input__text">Endereço do Telix</label>
-                <input id="input_token_url" type="text" placeholder="http:// + (endereço digitado)">
-            </p>
-            <p>
-                <label for="input__password">Token API</label>
-                <textarea id="token_api" rows="8" cols="48" readonly></textarea>
-            </p>
-            <p class="grouped">
-                <input type="text" name="input__text7" id="input_user" placeholder="Username">
-                <input type="password" name="input__text8" id="input_pass" placeholder="Password">
 
             </p>
-            <p>
-                <button class="button primary" onclick="get_token_user()">Pegar o Token</button>
-            </p>
-        </fieldset>
-
-    </div>
-    
-    <div class="col">
-        <fieldset id="forms__input">
-            <legend>Inserção de dados no DEVICE via token</legend>
-            <p>
-                <label for="input__password">Token do device</label>
-                <input id="token_device" type="text" placeholder="Token de acesso ao DEVICE">
-            </p>
-            <p>
-                <label for="textarea">Inserir o Json</label>
-                <textarea id="input_json_device" rows="8" cols="48" placeholder="Enter your message here"></textarea>
-            </p>
-            <p class="grouped">
-                <button class="button primary" onclick="enviar_dados()">Enviar Dado</button>
-            </p>
-        </fieldset>
-    </div>
-
-    <div class="col">
-        <fieldset id="forms__input">
-            <legend>Inserção na entidade</legend>
-            <p>
-                <label for="input__text">Entity ID</label>
-                <input id="input_entity_id_csv" type="text" placeholder="Digite o indentificador da entidade">
-            </p>
-
-            <p>
-                <label for="select">Selecione o tipo de entidade</label>
-                <select id="input_entity_type_csv">
-                    <option value="ASSET">ASSET</option>
-                    <option value="DEVICE">DEVICE</option>
-                </select>
-            </p>
-
-            <p>
-                <label for="select">Selecione o delimitador</label>
-                <select id="input_delimitador">
-                    <option value=";">Ponto e vírgula ( ; )</option>
-                    <option value=",">Vírgula ( , )</option>
-                    <option value="|">Barra ( | )</option>
-                    <option value=" ">Tab</option>
-                </select>
-            </p>
-
-            <p>
-                <label for="select">Delimitador de decimal</label>
-                <select id="input_delimit_dec">
-                    <option value=".">Ponto ( . )</option>
-                    <option value=",">Vírgula ( , )</option>
-                </select>
-            </p>
-
-            <p>
-                <label for="input__text3" class="error">Inserir CSV</label>
-                <input type="file" id="input_file" name="myfile" accept=".csv">
-            </p>
-
-            <p>
-                O algoritmo assume que a primeira coluna do arquivo CSV seja o timestamp, e as demais sejam as séries de daddos
-            </p>
-
-            <p id="info_csv">
-            </p>
+        </details>
+  </div>
 
 
-            <p id="loading">
-            </p>
 
-            <p class="grouped">
-                <button class="button primary" onclick="read_csv()">Enviar Dados</button>
-            </p>
-        </fieldset>
-
-    </div>
-
-</div>
+                <div class="row"  id="Inserir">
+                    <div class="col">
+                        <fieldset id="forms__input">
+                            <legend>Captura de token</legend>
+                            <p>
+                                <label for="input__text">Endereço do Telix</label>
+                                <input id="input_token_url" type="text" placeholder="http:// + (endereço digitado)">
+                            </p>
+                            <p>
+                                <label for="input__password">Token API</label>
+                                <textarea id="token_api" rows="8" cols="48" readonly></textarea>
+                            </p>
+                            <p class="grouped">
+                                <input type="text" name="input__text7" id="input_user" placeholder="Username">
+                                <input type="password" name="input__text8" id="input_pass" placeholder="Password">
+                
+                            </p>
+                            <p>
+                                <button class="button primary" onclick="get_token_user()">Pegar o Token</button>
+                            </p>
+                        </fieldset>
+                
+                    </div>
+                    
+                    <div class="col">
+                        <fieldset id="forms__input">
+                            <legend>Inserção de dados no DEVICE via token</legend>
+                            <p>
+                                <label for="input__password">Token do device</label>
+                                <input id="token_device" type="text" placeholder="Token de acesso ao DEVICE">
+                            </p>
+                            <p>
+                                <label for="textarea">Inserir o Json</label>
+                                <textarea id="input_json_device" rows="8" cols="48" placeholder="Enter your message here"></textarea>
+                            </p>
+                            <p class="grouped">
+                                <button class="button primary" onclick="enviar_dados()">Enviar Dado</button>
+                            </p>
+                        </fieldset>
+                    </div>
+                
+                    <div class="col">
+                        <fieldset id="forms__input">
+                            <legend>Inserção na entidade</legend>
+                            <p>
+                                <label for="input__text">Entity ID</label>
+                                <input id="input_entity_id_csv" type="text" placeholder="Digite o indentificador da entidade">
+                            </p>
+                
+                            <p>
+                                <label for="select">Selecione o tipo de entidade</label>
+                                <select id="input_entity_type_csv">
+                                    <option value="ASSET">ASSET</option>
+                                    <option value="DEVICE">DEVICE</option>
+                                </select>
+                            </p>
+                
+                            <p>
+                                <label for="select">Selecione o delimitador</label>
+                                <select id="input_delimitador">
+                                    <option value=";">Ponto e vírgula ( ; )</option>
+                                    <option value=",">Vírgula ( , )</option>
+                                    <option value="|">Barra ( | )</option>
+                                    <option value=" ">Tab</option>
+                                </select>
+                            </p>
+                
+                            <p>
+                                <label for="select">Delimitador de decimal</label>
+                                <select id="input_delimit_dec">
+                                    <option value=".">Ponto ( . )</option>
+                                    <option value=",">Vírgula ( , )</option>
+                                </select>
+                            </p>
+                
+                            <p>
+                                <label for="input__text3" class="error">Inserir CSV</label>
+                                <input type="file" id="input_file" name="myfile" accept=".csv">
+                            </p>
+                
+                            <p>
+                                O algoritmo assume que a primeira coluna do arquivo CSV seja o timestamp, e as demais sejam as séries de daddos
+                            </p>
+                
+                            <p id="info_csv">
+                            </p>
+                
+                
+                            <p id="loading">
+                            </p>
+                
+                            <p class="grouped">
+                                <button class="button primary" onclick="read_csv()">Enviar Dados</button>
+                            </p>
+                        </fieldset>
+                
+                    </div>
+                
+                </div>
 
 <div class="row">
         <div class="col">
