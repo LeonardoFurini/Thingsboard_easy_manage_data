@@ -1,2 +1,2 @@
-# Thingsboard_easy_manage_data
+# Thingsboard easy manage data
 Repositório para gerenciamento de dados no Thingsboard
