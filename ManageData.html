@@ -1,3 +1,4 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
     function isInteger(x) { return typeof x === "number" && isFinite(x) && Math.floor(x) === x; }
     function isFloat(x) { return !!(x % 1); }
@@ -6,37 +7,19 @@
         //alert('Old value: ' + currentValue);
         //alert('New value: ' + radio_delete_data.value);
         //var display = document.getElementById(el).style.display;
-        if(document.getElementById("interval").checked){
+        if (document.getElementById("interval").checked) {
             document.getElementById("intervalo_tempo").style.display = 'block';
-        }else{
+        } else {
             document.getElementById("intervalo_tempo").style.display = 'none';
         }
-    }
+    } 
 </script>
 
-
-
 <html>
-
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://unpkg.com/chota@latest">
-    </script>
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest"></script>
 </head>
-
-
-
-<div class="row">
-    <div class="col-4"> .col-4 </div>
-    <details>
-        <summary>Read more</summary>
-        <p>
-
-        </p>
-    </details>
-</div>
-
-
 
 <div class="row" id="Inserir">
     <div class="col">
@@ -187,10 +170,12 @@
             <p>
 
             </p>
-                <ul class="list list--bare">
-                    <label><input id="interval" type="radio" name="radio_delete_data" onclick="handleClick()" checked="checked" >Intervalo de tempo</label>
-                    <label><input id="all" type="radio" name="radio_delete_data" onclick="handleClick()">Todos os dados</label>                   
-                </ul>
+            <ul class="list list--bare">
+                <label><input id="interval" type="radio" name="radio_delete_data" onclick="handleClick()"
+                        checked="checked">Intervalo de tempo</label>
+                <label><input id="all" type="radio" name="radio_delete_data" onclick="handleClick()">Todos os
+                    dados</label>
+            </ul>
             </p>
 
             <p id="intervalo_tempo">
@@ -208,8 +193,6 @@
         </fieldset>
     </div>
 </div>
-</div>
-
 
 </html>
 
@@ -225,12 +208,12 @@
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.open("GET", theUrl, false); // false for synchronous request
         xmlHttp.setRequestHeader('X-Authorization', autorization);
-        
+
         //Caso tenhamos mais de 3 argumentos na função, sabemos que o 4 provavelmente é carga JSON
-        if(arguments.length > 3){
+        if (arguments.length > 3) {
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.send(payload);
-        }else{
+        } else {
             xmlHttp.send(null);
         }
         return xmlHttp.responseText;
@@ -512,18 +495,28 @@
         console.log(result_GET_request);
 
         var result_checkbox = '';
-        
+
         //Exemplo de retorno
         //["ts","limit_max","limit_min","dado1","dado2","distancia","limit_atencao"]
 
         for (i = 0; i < result_GET_request.length; i++) {
-            result_checkbox += '<li><input id="' + result_GET_request[i] + '" type="checkbox">' + result_GET_request[i] + '</li>';
+            result_checkbox += '<li><input value="' + result_GET_request[i] + '" name="keys" class="keys" type="checkbox">' + result_GET_request[i] + '</li>';
         }
 
         console.log(result_checkbox);
-        
+
         //Acrescenta o checkbox
         document.getElementById("checkbox_series").innerHTML = result_checkbox;
+    }
+
+    function readCheckbox(name) {
+        var checados = [];
+        $.each($("input[name='" + name + "']:checked"), function () {
+            checados.push($(this).val());
+        });
+
+        //Valores separados por virgula
+        return checados.join(", ");
     }
 
     function deleteDataAsset() {
@@ -544,7 +537,7 @@
 
 
 
-        if(debug == 1){
+        if (debug == 1) {
             console.log("Tempo inicial:", document.getElementById('timeInitial').value);
             console.log("TS inicial:", startTs);
             console.log("Tempo Final:", document.getElementById('timeFinal').value);
