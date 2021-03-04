@@ -324,7 +324,7 @@ function readCheckbox(name) {
     });
 
     //Valores separados por virgula
-    return checados.join(", ");
+    return checados.join(",");
 }
 
 function deleteDataAsset() {
