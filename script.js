@@ -297,7 +297,8 @@ function searchDataAsset() {
     //GET /api/plugins/telemetry/{entityType}/{entityId}/keys/attributes
     var entityId = document.getElementById('asset_ID_delete').value;
     var autorization = document.getElementById('token_api').value;
-    var entityType = "ASSET";
+    //var entityType = "ASSET";
+    var entityType = document.getElementById('entity_type_delete_data').value;
     var url = document.getElementById('input_token_url').value;
     var final_url = "http://" + url + "/api/plugins/telemetry/" + entityType + "/" + entityId + "/keys/timeseries";
 
@@ -337,7 +338,8 @@ function deleteDataAsset() {
     var autorization = document.getElementById('token_api').value;
     var keys;
     var deleteAllDataForKeys = "false";
-    var entityType = "ASSET";
+    //var entityType = "ASSET";
+    var entityType = document.getElementById('entity_type_delete_data').value;
     var entityId = document.getElementById('asset_ID_delete').value;
     var startTs = new Date(document.getElementById('timeInitial').value).getTime();
     var endTs = new Date(document.getElementById('timeFinal').value).getTime();

@@ -152,11 +152,18 @@
         </div>
         <div class="col">
             <fieldset id="forms__input">
-                <legend>Apagando dado de asset</legend>
+                <legend>Apagando Dados</legend>
 
+                <p>
+                    <label for="select">Selecione o tipo de entidade</label>
+                    <select id="entity_type_delete_data">
+                        <option value="ASSET">ASSET</option>
+                        <option value="DEVICE">DEVICE</option>
+                    </select>
+                </p>
 
                 <p class="grouped">
-                    <input id="asset_ID_delete" type="text" placeholder="ASSET ID">
+                    <input id="asset_ID_delete" type="text" placeholder="ID da entidade">
                     <button class="button dark" onclick="searchDataAsset()">Consultar</button>
                 <p>
 
